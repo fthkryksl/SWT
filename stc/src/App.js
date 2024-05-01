@@ -14,6 +14,21 @@ import WorkApproval from './Pages/WorkApproval.js';
 import FlexTime from './Pages/FlexTime.js';
 import Help from './Pages/Help.js';
 
+const { MongoClient } = require('mongodb');
+  const uri = 'mongodb://localhost:27017';
+
+  async function connectToDatabase() {
+    const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+
+    try {
+        await client.connect();
+        console.log('Verbindung zur MongoDB-Datenbank erfolgreich hergestellt.');
+        return client.db('SWT'); // Ersetze 'dein-datenbankname' mit dem Namen deiner Datenbank
+    } catch (error) {
+        console.error('Fehler bei der Verbindung zur Datenbank:', error);
+    }
+}
+
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
