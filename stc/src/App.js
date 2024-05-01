@@ -1,16 +1,25 @@
 import logo from './img/STC-01.png';
 import './App.css';
-import Login from './Pages/Login.js';
-import MainPage from'./Pages/MainPage.js';
 
-import { React } from 'react';
-import { useState } from 'react';
+/*PAGES*/
+import Login from './Pages/Login.js';
+import MainPage from './Pages/MainPage.js';
+
+import { React, useState } from 'react';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import VacationManagement from './Pages/VacationManagement.js';
+
 
 function App() {
-  const [isLoggedIn, setLoggedIn] = useState(false);
   return (
     <div className="App">
-      <MainPage />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Login />}>
+            <Route path="/MainPage" element={<MainPage />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }

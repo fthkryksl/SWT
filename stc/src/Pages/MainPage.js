@@ -3,26 +3,22 @@ import '../css/MainPage.css';
 
 import VacationManagement from './VacationManagement';
 
-import { Link, BrowserRouter } from 'react-router-dom'
-
 
 export default function MainPage() {
     return (
         <div id="page">
             <div id="mainFrame">
                 <img src={logo} alt="Firmenlogo" id="logo" />
-
-                <BrowserRouter>
                     <div id="table">
                         <div className="rows">
                             <a href="#" className="item">
                                 <span class="material-symbols-outlined">schedule</span>
                                 <p className="itemName" id="1">Time Tracking</p>
                             </a>
-                            <Link to={'./VacationsManagement.js'} className="item">
+                            <a href='VacationManagement' className="item" onClick={console.log("TEST")}>
                                 <span class="material-symbols-outlined">flight_takeoff</span>
                                 <p className="itemName" id="2">Vacation Management</p>
-                            </Link>
+                            </a>
                             <a href="#" className="item">
                                 <span class="material-symbols-outlined">note_add</span>
                                 <p className="itemName" id="3">Sick Leaving</p>
@@ -43,7 +39,6 @@ export default function MainPage() {
                             </a>
                         </div>
                     </div>
-                </BrowserRouter>
             </div>
         </div>
     );
