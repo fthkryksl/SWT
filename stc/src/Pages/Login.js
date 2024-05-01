@@ -1,23 +1,23 @@
 import logo from '../img/STC-01.png';
 import '../css/Login.css';
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import React, { useState } from 'react';
 
 export default function Login() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-
     const navigate = useNavigate();
 
     const handleLogin = () => {
-    if(email === 'admin@admin.com' && password === 'admin') {
-        console.log("Login successful");
-        navigate("/MainPage");
-    } else {
-        console.log("Login failed");
-        alert("Login failed");
+        if(email === 'admin@admin.com' && password === 'admin') {
+            console.log("Login successful");
+            navigate("/MainPage");
+        } else {
+            console.log("Login failed");
+            alert("Login failed");
+        }
     }
-}
+
     return (
         <div id="page">
             <div id="mainFrame">
