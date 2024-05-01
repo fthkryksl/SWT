@@ -1,5 +1,5 @@
 import logo from '../img/STC-01.png';
-import '../css/WorkApproval.css';
+import '../css/Work Approval.css';
 
 export default function WorkApproval() {
     return (

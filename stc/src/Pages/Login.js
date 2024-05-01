@@ -15,6 +15,7 @@ export default function Login() {
         navigate("/MainPage");
     } else {
         console.log("Login failed");
+        alert("Login failed");
     }
 }
     return (

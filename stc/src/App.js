@@ -8,6 +8,9 @@ import MainPage from './Pages/MainPage.js';
 import { React, useState } from 'react';
 import { BrowserRouter, Route, Routes, useNavigate } from 'react-router-dom';
 import VacationManagement from './Pages/VacationManagement.js';
+import WorkApproval from './Pages/Work Approval.js';
+import FlexTime from './Pages/FlexTime.js';
+
 
 
 function App() {
@@ -16,8 +19,11 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Login />}>
-            <Route index path="/MainPage" element={<MainPage />} />
-            <Route path="*" element={()=>{}} />
+            <Route path="/MainPage" element={<MainPage />} />
+            <Route path="/VacationManagement" element={<VacationManagement />} />
+            <Route path="/FlexTime" element={<FlexTime />} />
+            <Route path="/WorkApproval" element={<WorkApproval />} />
+            <Route path="*" element={() => <div>404 Not Found</div>} />
           </Route>
         </Routes>
       </BrowserRouter>

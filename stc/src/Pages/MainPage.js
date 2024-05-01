@@ -1,32 +1,27 @@
 import logo from '../img/STC-01.png';
 import '../css/MainPage.css';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Route, Routes, useNavigate } from 'react-router-dom';
 
 
 
 export default function MainPage() {
+
+    const navigate = useNavigate();
+
+    const toNavigate = (e) => {
+        navigate(e);
+    }
+
     return (
         <div id="page">
             <div id="mainFrame">
                 <img src={logo} alt="Firmenlogo" id="logo" />
-                <BrowserRouter>
-                <Routes>
-                    <Route path='/' element={()=>{}} className="item" >
-                                <span class="material-symbols-outlined">schedule</span>
-                                <p className="itemName" id="1">Time Tracking</p></Route>
-                    <Route path='/' element={()=>{}} >
-                                <span class="material-symbols-outlined">flight_takeoff</span>
-                                <p className="itemName" id="2">Vacation Management</p></Route>
-                    <Route path='/' element={()=>{}} />
-                    <Route path='/' element={()=>{}} />
-                    <Route path='/' element={()=>{}} />
-                    <Route path='/' element={()=>{}} />
                     <div id="table">
                         <div className="rows">
-                            <a href="#" className="item">
+                            <button onClick={"/wiopiaj"} className="item">
                                 <span class="material-symbols-outlined">schedule</span>
                                 <p className="itemName" id="1">Time Tracking</p>
-                            </a>
+                            </button>
                             <a href='VacationManagement' className="item" onClick={console.log("TEST")}>
                                 <span class="material-symbols-outlined">flight_takeoff</span>
                                 <p className="itemName" id="2">Vacation Management</p>
@@ -51,8 +46,6 @@ export default function MainPage() {
                             </a>
                         </div>
                     </div>
-                    </Routes>
-                    </BrowserRouter>
             </div>
         </div>
     );
