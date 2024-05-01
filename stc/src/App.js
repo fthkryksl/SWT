@@ -6,7 +6,7 @@ import Login from './Pages/Login.js';
 import MainPage from './Pages/MainPage.js';
 
 import { React, useState } from 'react';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Route, Routes, useNavigate } from 'react-router-dom';
 import VacationManagement from './Pages/VacationManagement.js';
 
 
@@ -16,7 +16,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Login />}>
-            <Route index element={<MainPage />} />
+            <Route index path="/MainPage" element={<MainPage />} />
             <Route path="*" element={()=>{}} />
           </Route>
         </Routes>
