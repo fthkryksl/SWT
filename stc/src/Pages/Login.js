@@ -12,7 +12,7 @@ export default function Login() {
     const handleLogin = () => {
     if(email === 'admin@admin.com' && password === 'admin') {
         console.log("Login successful");
-        navigate("/MainPage");
+        navigate("/");
     } else {
         console.log("Login failed");
     }
@@ -22,10 +22,10 @@ export default function Login() {
             <div id="mainFrame">
                 <img src={logo} id="logo" alt="Firmenlogo" />
                 <h1 id="title">SSO Login</h1>
-                <form action="" id="loginInput">
+                <form id="loginInput">
                     <input type="email" name="E-Mail Adresse" placeholder="E-Mail Adresse" value={email} onChange={(e)=>setEmail(e.target.value)} required />
-                    <input type="password" name="Password" placeholder="Passwort" valie={password} onChange={(e)=>setPassword(e.target.value)} required autoComplete="off" />
-                    <button type="submit" id="submit" value="Login" onClick={handleLogin}>Submit</button>
+                    <input type="password" name="Password" placeholder="Passwort" value={password} onChange={(e)=>setPassword(e.target.value)} required autoComplete="off" />
+                    <button id="submit" value="Login" onClick={handleLogin}>Submit</button>
 
                 </form>
                 <a href="#" id="forget">Forget password?</a>

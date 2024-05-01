@@ -5,75 +5,78 @@
     max-width: 100vw;
     height: 100vh;
     max-height: 100vh;
-
     background-color: var(--bg);
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     overflow-x: hidden;
-    overflow-y: hidden;
+    overflow-y: auto;
 }
 
 #mainFrame {
     aspect-ratio: 16/9;
     height: 75%;
     width: 75%;
-
     background-color: var(--container-bg);
     border: 2px solid var(--container-border);
     border-radius: 16px;
-
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-
-    box-shadow:  20px 20px 60px #bebebe,
-    -20px -20px 60px #ffffff;
+    box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
 }
 
 #logo {
     aspect-ratio: 2/1;
     width: 150px;
-    padding-top: 4em !important;
+    padding-top: 1em;
 }
 
 #title {
-    font-size: 3em;
+    font-size: 2em;
     font-weight: 600;
+    margin-bottom: 1em;
 }
 
-#loginInput {
+#vacationForm {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 60%;
+    margin-bottom: 2em;
 }
 
-.input {
-    display: flex;
-    justify-content: center;
-}
-
-#loginInput > input {
-    width: 50%;
+#vacationForm > input, #vacationForm > textarea {
+    width: 100%;
     padding: 1em;
     border: 1px solid var(--tr);
     border-radius: 4px;
     color: var(--fg);
-    margin: .25em;
+    margin: .5em;
 }
 
 #submit {
-    width: fit-content !important;
-    padding: 1em 3em !important;
-    margin: 1em !important;
+    padding: 1em 2em;
+    border-radius: 4px;
+    background-color: var(--btn-bg);
+    color: var(--btn-fg);
+    cursor: pointer;
 }
 
-#forget {
-    color: var(--tr);
+#vacationList {
+    width: 80%;
+    background-color: #f0f0f0;
+    padding: 1em;
+    border: 1px solid var(--tr);
+    border-radius: 8px;
+}
 
-    padding-bottom: 1em;
+.request {
+    padding: 1em;
+    border-bottom: 1px solid #ccc;
+}
+
+.request p {
+    margin: 0;
 }
