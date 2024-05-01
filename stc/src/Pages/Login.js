@@ -3,7 +3,7 @@ import '../css/Login.css';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-export default function Login() {
+export default function Login({ setIsLoggedIn }) {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const navigate = useNavigate();
@@ -11,6 +11,7 @@ export default function Login() {
     const handleLogin = () => {
         if(email === 'admin@admin.com' && password === 'admin') {
             console.log("Login successful");
+            setIsLoggedIn(true);
             navigate("/MainPage");
         } else {
             console.log("Login failed");
